@@ -1,0 +1,29 @@
+//
+//  PrefixHeader.pch
+//  MiniProjectGMK_iOS
+//
+//  Created by Admin on 1/26/2559 BE.
+//  Copyright (c) 2559 admin. All rights reserved.
+//
+
+#ifndef MiniProjectGMK_iOS_PrefixHeader_pch
+#define MiniProjectGMK_iOS_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifndef SERVER_URL
+#define SERVER_URL @"www.google.co.th"
+#endif
+
+#ifndef SERVER_REACH
+#define SERVER_REACH [[Reachability reachabilityWithHostName:SERVER_URL] currentReachabilityStatus]
+#endif
+
+#define URL_BASE @"http://mobiletest.gomeekisystems.com"
+#define URL_GetListArticles @"http://mobiletest.gomeekisystems.com/category_sport.json"
+#define URL_GetArticaleDetail @"http://mobiletest.gomeekisystems.com/"
+
+#define METERS_PER_MILE 1609.344
+
+#endif
