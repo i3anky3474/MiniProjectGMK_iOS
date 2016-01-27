@@ -49,7 +49,7 @@
             //Set Html TextView
             NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[articleModelClick.content dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType } documentAttributes:nil error:nil];
             tvDescription.attributedText = attributedString;
-            [tvDescription scrollRangeToVisible:NSMakeRange(0, 1)];
+            //[tvDescription scrollRangeToVisible:NSMakeRange(0, 1)];
             
             //Load Image
             [imvContent setContentMode:UIViewContentModeScaleAspectFit];

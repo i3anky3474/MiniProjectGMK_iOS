@@ -10,12 +10,12 @@
 #import "MyLocation.h"
 #import "AddressAnnotation.h"
 
-@interface MapViewController ()
-@end
-
-//@interface MapViewController ()<CLLocationManagerDelegate>
-//@property (strong, nonatomic) CLLocationManager *locationManager;
+//@interface MapViewController ()
 //@end
+
+@interface MapViewController ()<CLLocationManagerDelegate>
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@end
 
 @implementation MapViewController
 @synthesize mapViewArticle;
@@ -25,14 +25,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    //init Location Manager
-//    self.locationManager = [[CLLocationManager alloc] init];
-//    self.locationManager.delegate = self;
-//    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
-//    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-//        [self.locationManager requestWhenInUseAuthorization];
-//    }
-//    [self.locationManager startUpdatingLocation];
+    //init Location Manager
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
+    [self.locationManager startUpdatingLocation];
     
     //Init MapView
     self.mapViewArticle.delegate = self;
@@ -98,16 +98,44 @@
     return nil;
 }
 
-#pragma mark Zoom
-- (IBAction)zoomToCurrentLocation:(UIBarButtonItem *)sender {
-    float spanX = 0.00725;
-    float spanY = 0.00725;
-    MKCoordinateRegion region;
-    region.center.latitude = mapViewArticle.userLocation.coordinate.latitude;
-    region.center.longitude = mapViewArticle.userLocation.coordinate.longitude;
-    region.span.latitudeDelta = spanX;
-    region.span.longitudeDelta = spanY;
-    [mapViewArticle setRegion:region animated:YES];
+//#pragma mark Zoom
+//- (IBAction)zoomToCurrentLocation:(UIBarButtonItem *)sender {
+//    float spanX = 0.00725;
+//    float spanY = 0.00725;
+//    MKCoordinateRegion region;
+//    region.center.latitude = mapViewArticle.userLocation.coordinate.latitude;
+//    region.center.longitude = mapViewArticle.userLocation.coordinate.longitude;
+//    region.span.latitudeDelta = spanX;
+//    region.span.longitudeDelta = spanY;
+//    [mapViewArticle setRegion:region animated:YES];
+//}
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+//    NSLog(@"didUpdateToLocation: %@", newLocation);
+//    CLLocation *currentLocation = newLocation;
+//    
+//    if (currentLocation != nil) {
+////        NSLog(@"Lat : %@",[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude]);
+////        NSLog(@"Lon : %@",[NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude]);
+//        
+//        //Set Current Location
+//        MKPointAnnotation *myAnnotation = [[MKPointAnnotation alloc] init];
+//        myAnnotation.coordinate = CLLocationCoordinate2DMake([articleModelClick.lat doubleValue], [articleModelClick.lon doubleValue]);
+//        myAnnotation.title = articleModelClick.type;
+//        myAnnotation.subtitle = articleModelClick.title;
+//        [self.mapViewArticle addAnnotation:myAnnotation];
+//    }
 }
 
 @end
