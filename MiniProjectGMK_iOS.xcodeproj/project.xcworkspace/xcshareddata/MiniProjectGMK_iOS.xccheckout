@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D2AB3125-BD6D-40D2-AB39-DDF06B3BDF5A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MiniProjectGMK_iOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C4AD468671A4F27BC04D9D2B02CDEBA74291D0E7</key>
+		<string>https://github.com/i3anky3474/MiniProjectGMK_iOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MiniProjectGMK_iOS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C4AD468671A4F27BC04D9D2B02CDEBA74291D0E7</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/i3anky3474/MiniProjectGMK_iOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C4AD468671A4F27BC04D9D2B02CDEBA74291D0E7</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C4AD468671A4F27BC04D9D2B02CDEBA74291D0E7</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MiniProjectGMK_iOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>
